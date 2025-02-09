@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #define TAM 30
-struct Candidatas{
+struct Candidata{
     string nome;
     float altura;
     int peso;
@@ -9,32 +9,32 @@ struct Candidatas{
     string estado;
 };
 
-void cadastrarCandidatas(Candidatas V[TAM]){
+void cadastrarCandidatas(Candidata candidatas[TAM]){
     int i;
     for(i=0;i<TAM;i++){
         cout << "Digite seu Nome: ";
-        cin >> V[i].nome;
+        cin >> candidatas[i].nome;
         cout << "Digite sua Altura: ";
-        cin >> V[i].altura;
+        cin >> candidatas[i].altura;
         cout << "Digite seu Peso: ";
-        cin >> V[i].peso;
+        cin >> candidatas[i].peso;
         cout << "Digite sua Naturalidade: ";
-        cin >> V[i].naturalidade;
+        cin >> candidatas[i].naturalidade;
         cout << "Digite seu Estado (de forma abreviada EX:SP): ";
-        cin >> V[i].estado;
+        cin >> candidatas[i].estado;
     }
 
  
 }
-void mostrarCandidatas(Candidatas V[TAM]){
+void mostrarCandidatas(Candidata candidatas[TAM]){
     int i;
     bool encontrou = false;
     
     cout << " Lista de Candidatas com mais de 1.85 do estado de São Paulo\n ";
 
     for(i=0;i<TAM;i++){
-        if(V[i].altura >= 1.85 && V[i].estado == "SP")
-        cout << V[i].nome << endl;
+        if(candidatas[i].altura >= 1.85 && candidatas[i].estado == "SP")
+        cout << candidatas[i].nome << endl;
         encontrou = true;
     }
 
@@ -46,10 +46,10 @@ void mostrarCandidatas(Candidatas V[TAM]){
 
 
 
-Candidatas Cdstr[TAM];
+Candidata candidatas[TAM];
 int main(){
     setlocale (LC_ALL,"Portuguese");
-    cadastrarCandidatas(Cdstr);
-    mostrarCandidatas(Cdstr);
+    cadastrarCandidatas(candidatas);
+    mostrarCandidatas(candidatas);
     return 0;
 }
